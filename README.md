@@ -18,21 +18,22 @@ OSS是对象存储服务
 
 您需要创建静态网站首页和404错误页面的网页文件，并上传至目标Bucket。
 
-* 默认首页
-  * ```html
-    <html>
-        <head>
-            <title>Hello OSS!</title>
-            <meta charset="utf-8">
-        </head>
-        <body>
-            <p>开始阿里云OSS托管</p>
-            <p>这是索引页面</p>
-        </body>
-     </html>
+1. 本地创建两个HTML格式文件
+    * 默认首页
+    ```html
+<html>
+    <head>
+       <title>Hello OSS!</title>
+       <meta charset="utf-8">
+    </head>
+    <body>
+       <p>开始阿里云OSS托管</p>
+       <p>这是索引页面</p>
+    </body>
+</html>
     ```
-  * 默认404页
-    * ```html
+    * 默认404页
+    ```html
 <html>
 <head>
    <title>Hello OSS!</title>
@@ -43,3 +44,23 @@ OSS是对象存储服务
 </body>
 </html> 
     ```
+2. 将网页文件上传到目标Bucket
+    1. 登录OSS管理控制台
+    2. 单击Bucket列表，然后单击目标Bucket
+    3. 单击文件管理，然后单击上传文件
+    4. 在上传文件面板的上传文件区域，单击直接上传并选中刚刚创建的两个网页文件。其他参数均保持默认配置
+
+步骤3：配置静态网站托管
+
+1. 单击基础设置 > 静态页面
+2. 单击设置，将index.html设置为默认首页；将error.html设置为默认404页。
+3. 单击保存
+
+步骤4：绑定自定义域名
+
+现在，您已有了根域名example.com和名为examplebucket的Bucket，接下来您需要将域名绑定到Bucket，以便能够使用您的域名访问Bucket。
+
+1. 在Bucket管理页面，单击传输管理 > 域名管理。
+2. 单击绑定域名。
+3. 在域名文本框输入example.com，并打开自动添加CNAME记录开关。
+4. 单击确定。
